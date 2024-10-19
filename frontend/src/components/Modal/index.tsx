@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { EyeStyled, ModalContainer, ModalContent, XStyled } from "./styles";
 import { BadgeType } from "../../enum/badgeEnum";
+import { GraficChart } from "../GraficChart";
 
 interface ModalProps {
   color: BadgeType;
@@ -15,8 +16,7 @@ export function Modal({ color }: ModalProps) {
         <ModalContainer>
           <ModalContent color={color}>
             <XStyled onClick={() => setIsOpen(!isOpen)} />
-            <h1>Modal</h1>
-            <p>Modal content</p>
+            <GraficChart />
           </ModalContent>
         </ModalContainer>
       )}
