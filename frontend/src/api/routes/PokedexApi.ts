@@ -10,6 +10,14 @@ export interface PokemonType {
   spriteShiny: string;
   type1: BadgeType;
   type2: BadgeType;
+  hp: number;
+  atk: number;
+  spatk: number;
+  def: number;
+  spdef: number;
+  speed: number;
+  abilityHidden: string;
+  abilityNormal: string;
 }
 
 // interface ParamsType {
@@ -20,7 +28,9 @@ export interface PokemonType {
 
 const getPokemon = async () => {
   // params: { limit: 10, offset: 0, page: 1 }
-  return await api.get(`${resource}`);
+  const data =  await api.get(`${resource}`);
+  console.log(data);
+  return data;
 };
 
 export const pokemonApi = {

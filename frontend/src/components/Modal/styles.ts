@@ -42,9 +42,8 @@ export const ModalContent = styled.div<ModalContentProps>`
   background-color: ${(props) => props.theme[props.color]};
   padding: 20px;
   border-radius: 5px;
-  width: 50%;
   min-width: 300px;
-  max-width: 800px;
+  max-width: 1200px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   color: ${(props) => props.theme["gray-900"]};

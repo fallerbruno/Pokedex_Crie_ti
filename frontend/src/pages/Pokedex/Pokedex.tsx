@@ -26,6 +26,14 @@ export function Pokedex() {
             name={pokemon.name}
             type1={pokemon.type1}
             type2={pokemon.type2}
+            hp={pokemon.hp}
+            atk={pokemon.atk}
+            spatk={pokemon.spatk}
+            def={pokemon.def}
+            spdef={pokemon.spdef}
+            speed={pokemon.speed}
+            abilityHidden={pokemon.abilityHidden}
+            abilityNormal={pokemon.abilityNormal}
           />
         ))
       ) : (

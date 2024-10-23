@@ -1,29 +1,75 @@
 import { useState } from "react";
 import Chart from "react-apexcharts";
 
-export function GraficChart() {
+interface GraficChartProps {
+  hp: number;
+  atk: number;
+  spatk: number;
+  def: number;
+  spdef: number;
+  speed: number;
+}
+
+export function GraficChart({
+  hp,
+  atk,
+  spatk,
+  def,
+  spdef,
+  speed,
+}: GraficChartProps) {
   const [options, setOptions] = useState({
-    options: {
-      chart: {
-        id: "basic-bar",
-      },
-      xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          borderRadiusApplication: "end",
-          horizontal: true,
+    chart: {
+      id: "basic-bar",
+      height: 350,
+    },
+    xaxis: {
+      categories: [
+        "Health Points",
+        "Attack",
+        "Special Attack",
+        "Defense",
+        "Special Defense",
+        "Speed",
+      ],
+      labels: {
+        style: {
+          fontSize: "1rem",
+          fontWeight: "bold",
+          colors: ["#000000"],
         },
+      },
+    },
+    yaxis: {
+      labels: {
+        style: {
+          fontSize: "1rem",
+          fontWeight: "bold",
+          colors: ["#000"],
+        },
+      },
+    },
+    plotOptions: {
+      bar: {
+        distributed: true,
+        borderRadius: 4,
+        horizontal: true,
+        barHeight: "85%",
       },
     },
     series: [
       {
-        name: "series-1",
-        data: [30, 40, 45, 50, 49, 60, 70, 91],
+        name: "status",
+        data: [hp, atk, spatk, def, spdef, speed],
       },
     ],
+    dataLabels: {
+      enabled: false,
+    },
+    colors: ["#F24405", "#FA7F08", "#042940", "#DBF227", "#0CF25D", "#7A577A"], // Cores diferentes para cada barra
+    legend: {
+      show: false,
+    },
   });
 
   return (
@@ -31,10 +77,11 @@ export function GraficChart() {
       <div className="row">
         <div className="mixed-chart">
           <Chart
-            options={options.options}
+            options={options} // Passa todas as opções aqui
             series={options.series}
             type="bar"
-            width="500"
+            width="600"
+            height={200}
           />
         </div>
       </div>
