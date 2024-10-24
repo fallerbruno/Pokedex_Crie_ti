@@ -28,6 +28,7 @@ export function Trade() {
               email={trade.User?.email}
               species={trade.species}
               key={trade.id}
+              shiny={trade.shiny}
             />
           ))}
         </div>

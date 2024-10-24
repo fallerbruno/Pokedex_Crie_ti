@@ -9,26 +9,30 @@ export const CardTradeContainer = styled.div<CardTradeContainerProps>`
     justify-content: space-between;
     align-items: center;
     background-color: ${(props) => props.theme[props.$color]};
+    margin-top: 50px;
+    border-radius: 16px;
 `
 
 export const CardTradeContent = styled.div`
     display: flex;
-    gap: 20px
+    gap: 20px;
 
     & div {
         display: flex;
         flex-direction: column;
-        gap: 10px 
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
     }
 
     & p {
         font-size: 1.5rem;
         font-weight: bold;
-        ${(props) => props.theme["gray-900"]};
+        color: ${(props) => props.theme["gray-900"]};
     }
 
     & img {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 ` 

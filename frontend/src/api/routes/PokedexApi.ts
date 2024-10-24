@@ -20,15 +20,13 @@ export interface PokemonType {
   abilityNormal: string;
 }
 
-// interface ParamsType {
-//   limit: number;
-//   offset: number;
-//   page: number;
-// }
+interface ParamsType {
+  name: string
+}
 
-const getPokemon = async () => {
-  // params: { limit: 10, offset: 0, page: 1 }
-  const data =  await api.get(`${resource}`);
+const getPokemon = async ({ name }: ParamsType) => {
+  const params = { name: name }
+  const data = await api.get(`${resource}`, { params });
   console.log(data);
   return data;
 };

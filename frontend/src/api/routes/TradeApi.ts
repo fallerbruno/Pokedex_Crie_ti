@@ -19,6 +19,7 @@ export interface TradeListProps {
     species: string;
     ability: string;
     type1: string;
+    shiny: boolean;
 }
 
 const getTradeList = async () => {
