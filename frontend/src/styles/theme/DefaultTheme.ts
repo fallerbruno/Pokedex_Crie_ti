@@ -38,4 +38,5 @@ export const defaultTheme = {
   steel: "#B7B9D0",
   water: "#539DDF",
   stellar: "#FFD700",
+  unknown: '#fff'
 };

@@ -47,11 +47,14 @@ export function Card({
   abilityNormal,
 }: CardProps) {
   const [isShiny, setIsShiny] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <CardContainer color={type1} $isShiny={isShiny}>
         <CardAction>
-          <Modal color={type1}>
+          <Modal color={type1} setIsOpen={setIsOpen} isOpen={isOpen}>
             <CardContent>
               <CardContentHeader>
                 <span>{name}</span>

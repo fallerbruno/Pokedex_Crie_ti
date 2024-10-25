@@ -11,7 +11,7 @@ export function Pokedex() {
   }, []);
 
   const getPokemons = async () => {
-    const response = await pokemonApi.getPokemon();
+    const response = await pokemonApi.getPokemon({});
     setPokemons(response.data);
   };
 
